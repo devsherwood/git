@@ -18,11 +18,13 @@ cd newproject
 
 mkdir analysis output
 touch README.md
+echo "# Project Name: DSI Consulting Inc." > README.md
 touch analysis/main.py
 
 # download client data
 curl -Lo rawdata.zip https://github.com/UofT-DSI/shell/raw/refs/heads/main/02_activities/assignments/rawdata.zip
 unzip -q rawdata.zip
+
 
 ###########################################
 # Complete assignment here
@@ -30,14 +32,19 @@ unzip -q rawdata.zip
 mkdir data
 mv rawdata data/raw
 ls data/raw
+
 mkdir data/processed
 mkdir data/processed/server_logs data/processed/user_logs data/processed/event_logs
+
 cp data/raw/*server*.log data/processed/server_logs/
 cp data/raw/*user_log_*.log data/processed/user_logs/
 cp data/raw/*event_log_*.log data/processed/event_logs/
+
 rm data/raw/*ipaddr*
 rm data/processed/user_logs/*ipaddr*
+
 find data/processed -type f > data/inventory.txt
+
 ###########################################
 
 echo "Project setup is complete!"

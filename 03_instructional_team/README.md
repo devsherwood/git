@@ -1,4 +1,4 @@
-# Technical Facilitator Playbook
+# Instructional Team Playbook
 
 ## How do you interact with the repo?
 The Technical Facilitator will deliver the content in the `/01_materials/slides` directory. You are encouraged to live code with participants during live sessions. Please ensure that live coding files are uploaded to a new directory called `/live_code` under `/04_cohort_three` in this repository using a new branch. Please open a pull request for it to be merged.
@@ -13,28 +13,22 @@ The `/01_materials/slides` directory contains the live learning session slides.
 
 The `/02_activities/assignments` contains assignments participants should submit for evaluation as  `complete` or `incomplete`. The assignments measure a participant's achievement of the learning outcomes, and help technical facilitators determine if a participant has successfully completed the learning module. 
 
-The `/02_activities/homework` directory contains homework participants can complete to further develop and practice the skills covered in a learning module. Homework is optional, but participants are encouraged to complete as much as they can.
+The `/02_activities/homework` directory contains homework participants can complete to further develop and practice the skills covered in a learning module. Homework is optional, but participants are encouraged to complete as much as they can. 
 
 ### Week 1
 
 #### Live Learning Session
-The focus of the live learning session is to introduce the learners to using `git` commands such as:
-```git
-git add .
-git commit -m "Your message"
-git push -u origin <branch>
-git pull
-git checkout -b <branch_name>
-git checkout <branch_name>
-```
+The focus of the live learning session is to introduce participants to basic bash commands such as `cd` and `pwd`, as well as creating files using `touch` and directories using `mkdir`. The module also introduces intermediate commands like `rm`, how to recursively remove files from a nested directory, and how to make copies or move files using `mv`.
+
+Note: If someone wants to open up the "manual", recommend they use the `man` command.
 
 #### Assignment
-The assignment for this week helps participants learn more about `git` and the difference between 'git' and `GitHub`. They will practice using `git` to constantly push their answers (changes) onto `GitHub`.
+The assignment for this week is to have participants find the secret password by navigating directories and files.
 
 ## How do you assign assignments?
 Technical Facilitators are encouraged to introduce assignments as early as possible in the learning module. The Technical Facilitator should describe the assignment to participants and explain how the topics covered in the module will equip them with the knowledge and skills to complete the assignment. 
 
-## How an assignment is expected to be completed and delivered?
+## How is an assignment is expected to be completed and delivered?
 Participants are expected to complete the assignment by the end of the first week. They will deliver the assignment by opening a pull request on their copied repo. The participants will also add a Learning Support Staff as a reviewer indicating they delivered a completed assignment, and it is ready to be evaluated as `complete` or `incomplete`.
 
 ## What is the criteria for `complete` or `incomplete`?
@@ -58,17 +52,3 @@ Feedback should be given through the pull request a participant has made. Techni
 ## generate_slides.sh
 
 This script is designed to convert Markdown files located in a specified folder into slide presentations using Marp CLI, allowing for the generation of either HTML or PDF formats based on user input. It includes an option to apply a custom CSS theme to the slides by specifying a theme path. The script also provides a help function detailing its usage, options, and examples for convenience. It ensures the necessary directories exist, validates the presence of Marp CLI on the system, processes each Markdown file found in the specified directory, and outputs the generated slides into a designated output folder, displaying the status of each operation and a completion message. The only configuration needed is to set where the md files are and where you would like the pdf/html files to be placed.
-
-Example command to generate themed PDF slides:
-
-```bash
-cd 03_instructional_team
-./generate_slides.sh --pdf --theme markdown_slides/themes/dsi_certificates_theme.css
-```
-
-To generate themed HTML slides instead, use:
-
-```bash
-cd 03_instructional_team
-./generate_slides.sh --html --theme markdown_slides/themes/dsi_certificates_theme.css
-```
